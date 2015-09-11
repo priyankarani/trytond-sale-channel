@@ -74,5 +74,6 @@
     </notebook>
     <group id="import_export_buttons" colspan="8" states="{'invisible': Eval('source') == 'manual' }">
         <button string="Import Data" name="import_data_button"/>
+        <button string="Export Data" name="export_data_button"/>
     </group>
 </form>

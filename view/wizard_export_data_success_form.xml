@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<form string="Export Data" col="2">
+    <label string="Data has been exported successfully" id="success" colspan="2" yalign="0.0" xalign="0.0" xexpand="1"/>
+    <label name="no_of_orders"/>
+    <field name="no_of_orders"/>
+    <label name="no_of_products"/>
+    <field name="no_of_products"/>
+    <label name="no_of_products_with_prices_exported"/>
+    <field name="no_of_products_with_prices_exported"/>
+</form>

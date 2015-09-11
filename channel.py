@@ -163,6 +163,7 @@ class SaleChannel(ModelSQL, ModelView):
         super(SaleChannel, cls).__setup__()
         cls._buttons.update({
             'import_data_button': {},
+            'export_data_button': {},
             'import_order_states_button': {},
         })
         cls._error_messages.update({
@@ -240,6 +241,20 @@ class SaleChannel(ModelSQL, ModelView):
 
         :return: List of active records of products for which prices are
         exported
+        """
+        raise NotImplementedError(
+            "This feature has not been implemented for %s channel yet."
+            % self.source
+        )
+
+    def export_order_status(self):
+        """
+        Export order status to external channel
+
+        Since external channels are implemented by downstream modules, it is
+        the responsibility of those channels to reuse this method or call super.
+
+        :return: List of active records of orders exported
         """
         raise NotImplementedError(
             "This feature has not been implemented for %s channel yet."
@@ -455,6 +470,11 @@ class SaleChannel(ModelSQL, ModelView):
     @classmethod
     @ModelView.button_action('sale_channel.wizard_import_data')
     def import_data_button(cls, channels):
+        pass  # pragma: nocover
+
+    @classmethod
+    @ModelView.button_action('sale_channel.wizard_export_data')
+    def export_data_button(cls, channels):
         pass  # pragma: nocover
 
     @classmethod

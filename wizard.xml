@@ -29,6 +29,28 @@
             <field name="name">wizard_import_data_properties_form</field>
         </record>
 
+        <!--Export Data Wizard-->
+        <record model="ir.action.wizard" id="wizard_export_data">
+            <field name="name">Export Data</field>
+            <field name="wiz_name">sale.channel.export_data</field>
+            <field name="model">sale.channel</field>
+        </record>
+        <record model="ir.action.keyword" id="wizard_export_data_keyword">
+            <field name="keyword">form_action</field>
+            <field name="model">sale.channel,-1</field>
+            <field name="action" ref="wizard_export_data"/>
+        </record>
+        <record model="ir.ui.view" id="export_data_start_view_form">
+            <field name="model">sale.channel.export_data.start</field>
+            <field name="type">form</field>
+            <field name="name">wizard_export_data_start_form</field>
+        </record>
+        <record model="ir.ui.view" id="export_data_success_view_form">
+            <field name="model">sale.channel.export_data.success</field>
+            <field name="type">form</field>
+            <field name="name">wizard_export_data_success_form</field>
+        </record>
+
         <!--Import Order states wizard-->
         <record model="ir.action.wizard" id="wizard_import_order_states">
             <field name="name">Import Order States</field>

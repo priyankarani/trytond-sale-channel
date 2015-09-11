@@ -9,6 +9,7 @@ from channel import (
 )
 from wizard import (
     ImportDataWizard, ImportDataWizardStart, ImportDataWizardSuccess,
+    ExportDataWizard, ExportDataWizardStart, ExportDataWizardSuccess,
     ImportDataWizardProperties, ImportOrderStatesStart, ImportOrderStates,
     ExportPricesStatus, ExportPricesStart, ExportPrices
 )
@@ -31,6 +32,8 @@ def register():
         ImportDataWizardStart,
         ImportDataWizardSuccess,
         ImportDataWizardProperties,
+        ExportDataWizardStart,
+        ExportDataWizardSuccess,
         ImportOrderStatesStart,
         ExportPricesStatus,
         ExportPricesStart,
@@ -38,6 +41,7 @@ def register():
     )
     Pool.register(
         ImportDataWizard,
+        ExportDataWizard,
         ImportOrderStates,
         ExportPrices,
         module='sale_channel', type_='wizard'
