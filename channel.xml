@@ -53,6 +53,17 @@
             <field name="action" ref="act_listed_product"/>
         </record>
 
+        <record model="ir.action.act_window" id="act_sale">
+            <field name="name">Orders</field>
+            <field name="res_model">sale.sale</field>
+            <field name="domain" eval="[('channel', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_sale_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">sale.channel,-1</field>
+            <field name="action" ref="act_sale"/>
+        </record>
+
         <!-- Access -->
         <record model="ir.model.access" id="access_sale_channel">
             <field name="model" search="[('model', '=', 'sale.channel')]"/>
